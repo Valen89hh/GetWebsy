@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "aos/dist/aos.css";
 
 
 @font-face {
@@ -60,5 +61,10 @@
     background-clip: text;
     color: transparent;
     width: fit-content;
+  }
+
+  .gradient-oragen-blur {
+    background: #EF9364;
+    background: radial-gradient(circle, rgba(239, 147, 100, 1) 49%, rgba(239, 147, 100, 0.3) 100%);
   }
 }

@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import "../styles/global.css";
 ---
 
@@ -9,9 +10,10 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>GetWebsy</title>
 	</head>
 	<body>
+		<Header/>
 		<slot />
 	</body>
 </html>
@@ -24,3 +26,16 @@ import "../styles/global.css";
 		height: 100%;
 	}
 </style>
+
+<script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+
+  window.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      duration: 1000,
+      once: true, // Solo una vez, sin repetición
+    });
+  });
+</script>
+

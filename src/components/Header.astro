@@ -1,3 +1,30 @@
-<header>
-    
+---
+import Logo from "./Logo.astro";
+import MobileHeader from "./MobileHeader";
+import ButtonSecondary from "./ui/buttons/ButtonSecondary.astro";
+import Container from "./ui/containers/Container.astro";
+---
+
+<header class="fixed top-0 w-full z-50 bg-background/30 backdrop-blur-md border-b border-white/10">
+
+  <Container class="flex justify-between items-center py-4">
+    <Logo />
+
+    <!-- Header móvil -->
+    <MobileHeader client:load />
+
+    <!-- Navegación desktop -->
+    <nav class="hidden lg:flex">
+      <ul class="flex gap-6 items-center">
+        <li><a href="#services" class="font-agrandir-bold text-white">Servicios</a></li>
+        <li><a href="#precios" class="font-agrandir-bold text-white">Precios</a></li>
+        <li><a href="#proyectos" class="font-agrandir-bold text-white">Proyectos</a></li>
+        <li>
+          <a href="#contact">
+            <ButtonSecondary>Contáctanos</ButtonSecondary>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </Container>
 </header>
