@@ -1,0 +1,17 @@
+---
+// Importar la función
+import { twMerge } from 'tailwind-merge';
+
+// Props
+const {  class: className = "", ...rest } = Astro.props;
+
+// Clases base
+const baseClasses = "p-6 rounded-sm border-t border-b border-l border-r border-border";
+
+// Combinar usando twMerge
+const finalClass = twMerge(baseClasses, className);
+---
+
+<article class={finalClass} {...rest}>
+  <slot />
+</article>
