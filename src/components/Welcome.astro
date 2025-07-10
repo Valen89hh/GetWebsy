@@ -1,4 +1,9 @@
 ---
+import Logo from './Logo.astro';
+import ButtonPrimary from './ui/buttons/ButtonPrimary.astro';
+import ButtonSecondary from './ui/buttons/ButtonSecondary.astro';
+import Card from './ui/cards/Card.astro';
+import Field from './ui/inputs/Field.astro';
 import Caption from './ui/texts/Caption.astro';
 import Heading1 from './ui/texts/Heading1.astro';
 import Heading2 from './ui/texts/Heading2.astro';
@@ -8,13 +13,14 @@ import SmallText from './ui/texts/SmallText.astro';
 ---
 
 <div class="bg-black">
+	<Logo/>
 	<h1 class="font-agrandir-heavy text-white">GetWebsy</h1>
 	<h1 class="text-8xl font-agrandir-heavy text-white">Lleva tu <span class="text-gradient-custom">Negocio</span> 
 al mundo digital </h1>
 	<Heading1>
         Usamos herramientas líderes en la industria web
     </Heading1>
-	<div class="w-[400px] border-border border rounded-sm p-2">
+	<div class="w-[400px] border-border border rounded-sm p-6">
 		<Heading2>
 			Desarrollo web
 		</Heading2>
@@ -39,4 +45,20 @@ al mundo digital </h1>
 				MAS POUPLAR
 			</button>
 	</div>
+	<Card class="border-l-0">
+		
+		<ButtonPrimary class="">
+			Enviar
+		</ButtonPrimary>
+		<ButtonSecondary>
+			Empezar
+		</ButtonSecondary>
+		<Field 
+			type="email"
+			placeholder="Tu email"
+			class=" text-primary" 
+			/>
+
+	</Card>
+
 </div>
