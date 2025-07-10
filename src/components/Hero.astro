@@ -1,0 +1,40 @@
+---
+import BlobsBackground from "./ui/animation/BlobsBackground";
+import ButtonPrimary from "./ui/buttons/ButtonPrimary.astro";
+import Field from "./ui/inputs/Field.astro";
+import Paragraph from "./ui/texts/Paragraph.astro";
+---
+
+<section class="relative bg-background min-h-screen flex justify-center items-center px-4 py-12 overflow-hidden">
+  {/* Malla */}
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0" />
+
+  {/* Blurs de color (similares a los que tienes en tu imagen) */}
+ <!-- Nube naranja inferior izquierda -->
+<BlobsBackground client:load  />
+
+
+
+  {/* Contenido */}
+  <div data-aos="fade-down" class="relative z-10 w-full max-w-5xl flex flex-col lg:w-1/2">
+    <h1  class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-agrandir-heavy text-white leading-tight text-center lg:text-left">
+      Lleva tu <span class="text-gradient-custom">Negocio</span> al mundo digital
+    </h1>
+
+    <Paragraph class="mt-4 mb-8 text-center lg:text-left">
+      Diseñamos páginas web, tiendas online y sistemas personalizados con soporte incluido
+    </Paragraph>
+
+
+    <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-3/4 mx-auto lg:mx-0">
+        <Field 
+        type="email"
+        placeholder="Email"
+        class="text-primary h-[52px] w-full"
+        />
+        <ButtonPrimary class="h-[52px] w-full sm:w-auto px-6">
+        Enviar
+        </ButtonPrimary>
+    </div>
+  </div>
+</section>

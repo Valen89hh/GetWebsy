@@ -1,13 +1,63 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import Logo from './Logo.astro';
+import ButtonPrimary from './ui/buttons/ButtonPrimary.astro';
+import ButtonSecondary from './ui/buttons/ButtonSecondary.astro';
+import Card from './ui/cards/Card.astro';
+import Field from './ui/inputs/Field.astro';
+import Caption from './ui/texts/Caption.astro';
 import Heading1 from './ui/texts/Heading1.astro';
+import Heading2 from './ui/texts/Heading2.astro';
+import Heading3 from './ui/texts/Heading3.astro';
+import Paragraph from './ui/texts/Paragraph.astro';
+import SmallText from './ui/texts/SmallText.astro';
 ---
 
 <div class="bg-black">
-	<h1 class="text-2xl font-agrandir-heavy font-extrabold">GetWebsy</h1>
-	<h1 class="text-2xl font-agrandir text-primary-text">GetWebsy</h1>
+	<h1 class="font-agrandir-heavy text-white">GetWebsy</h1>
+	<h1 class="text-8xl font-agrandir-heavy text-white">Lleva tu <span class="text-gradient-custom">Negocio</span> 
+al mundo digital </h1>
 	<Heading1>
-        Lleva tu <span class="text-gradient-custom">Negocio</span> al mundo digital 
+        Usamos herramientas líderes en la industria web
     </Heading1>
+	<div class="w-[400px] border-border border rounded-sm p-6">
+		<Heading2>
+			Desarrollo web
+		</Heading2>
+		<SmallText>
+			Creamos páginas web modernas, rápidas y adaptadas a cualquier dispositivo.
+		</SmallText>
+	</div>
+	<Paragraph>
+		En GetWebsy utilizamos tecnologías modernas y confiables como Next.js, Supabase y Vercel para crear sitios rápidos, seguros y escalables, garantizando una experiencia web profesional para tu negocio.
+	</Paragraph>
+	<SmallText class="font-agrandir">
+		Todo lo del plan <span class="text-white">Impulso</span>, más:
+	</SmallText>
+	<div class="flex items-center gap-2">
+		<Heading3>
+			Vitrina
+		</Heading3>
+			<Caption class="text-tag-blue bg-primary rounded-sm p-2 text-center leading-none inline-block">
+				MÁS POPULAR
+			</Caption>
+			<button class="text-tag-blue text-xs leading-none h-6 inline-flex items-center bg-primary rounded-sm">
+				MAS POUPLAR
+			</button>
+	</div>
+	<Card class="border-l-0">
+		
+		<ButtonPrimary class="">
+			Enviar
+		</ButtonPrimary>
+		<ButtonSecondary>
+			Empezar
+		</ButtonSecondary>
+		<Field 
+			type="email"
+			placeholder="Tu email"
+			class=" text-primary" 
+			/>
+
+	</Card>
+
 </div>

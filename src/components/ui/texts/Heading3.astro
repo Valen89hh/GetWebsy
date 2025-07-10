@@ -6,12 +6,12 @@ import { twMerge } from 'tailwind-merge';
 const { class: className = "" } = Astro.props;
 
 // Clases base
-const baseClasses = "text-4xl font-agrandir-bold text-white";
+const baseClasses = "text-2xl font-agrandir-bold text-white";
 
 // Combinar usando twMerge
 const finalClass = twMerge(baseClasses, className);
 ---
 
-<h1 class={finalClass}>
+<h3 class={finalClass}>
   <slot />
-</h1>
+</h3>
