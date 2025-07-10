@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'Agrandir Regular';
+  src: url('/fonts/Agrandir-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Agrandir Bold';
+  src: url('/fonts/Agrandir-TextBold.otf') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Agrandir Heavy';
+  src: url('/fonts/Agrandir-GrandHeavy.otf') format('opentype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Agrandir Light';
+  src: url('/fonts/Agrandir-GrandLight.otf') format('opentype');
+  font-weight: 300;
+}
+
+@theme {
+    --font-agrandir: "Agrandir Regular", sans-serif;
+    --font-agrandir-bold: "Agrandir Bold", sans-serif;
+    --font-agrandir-heavy: "Agrandir Heavy", sans-serif;
+    --font-agrandir-heavy: "Agrandir Heavy", sans-serif;
+    --font-agrandir-light: "Agrandir Light", sans-serif;
+
+    --color-primary: #FFA800;
+
+}
