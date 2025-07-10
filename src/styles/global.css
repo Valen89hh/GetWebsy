@@ -31,6 +31,28 @@
     --font-agrandir-heavy: "Agrandir Heavy", sans-serif;
     --font-agrandir-light: "Agrandir Light", sans-serif;
 
-    --color-primary: #FFA800;
+      /*background color*/
+    --color-background-primary: #121212;
+    --color-background-secondary: #1C1C1C;
+    --color-background-tertiary: #313131;
 
+    /*text color*/
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #AAAAAA;
+    --color-text-accent-green: #90EE90
+
+    /*accent color*/
+    --color-primary: #FF9900;
+  }
+@layer utilities {
+  .text-gradient-custom {
+    background: #9F8CED;
+    background: -webkit-linear-gradient(30deg, rgba(159, 140, 237, 1) 0%, rgba(250, 124, 11, 1) 49%, rgba(157, 232, 238, 1) 100%);
+    background: -moz-linear-gradient(30deg, rgba(159, 140, 237, 1) 0%, rgba(250, 124, 11, 1) 49%, rgba(157, 232, 238, 1) 100%);
+    background: linear-gradient(30deg, rgba(159, 140, 237, 1) 0%, rgba(250, 124, 11, 1) 49%, rgba(157, 232, 238, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9F8CED", endColorstr="#9DE8EE", GradientType=0);
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+  }
 }
