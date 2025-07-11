@@ -1,0 +1,69 @@
+---
+import Container from "./ui/containers/Container.astro";
+import Logo from "./Logo.astro";
+import Field from "./ui/inputs/Field.astro";
+import SmallText from "./ui/texts/SmallText.astro";
+import Text from "./ui/texts/Text.astro";
+---
+
+<footer class="bg-black text-white py-12">
+    <Container>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <!-- Company -->
+        <div>
+            <Text class="text-white mb-4">Compañia</Text>
+            <ul class="space-y-2">
+            <li><a href="#"><Text>Sobre Nosotros</a></li>
+            <li><a href="#"><Text>Equipo</a></li>
+            <li><a href="#"><Text>Carreras</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+        <Text class="text-white mb-4">Services</Text>
+        <ul class="space-y-2">
+            <li><a href="#"><Text>Branding</a></li>
+            <li><a href="#"><Text>Web development</a></li>
+            <li><a href="#"><Text>Digital marketing</a></li>
+            <li><a href="#"><Text>Mobile app</a></li>
+            <li><a href="#"><Text>SEO</a></li>
+            <li><a href="#"><Text>User testing</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+        <Text class="text-white mb-4">Resources</Text>
+            <ul class="space-y-2">
+            <li><a href="#"><Text>Blog</a></li>
+            <li><a href="#"><Text>Case study</a></li>
+            <li><a href="#"><Text>Testimonials</a></li>
+        </ul>
+        </div>
+
+        <!-- Follow us -->
+        <div>
+        <Text class="text-white mb-4">Follow us</Text>
+        <ul class="space-y-2">
+            <li><a target="_blank" href="https://www.instagram.com/getwebsy.es/"><Text>Instagram</a></li>
+            <li><a target="_blank" href="https://www.tiktok.com/@getwebsy"><Text>TikTok</a></li>
+            <li><a target="_blank" href="https://wa.me/51944764587"><Text>WhatsApp</a></li>
+        </ul>
+        </div>
+
+        <!-- Logo & Newsletter -->
+        <div class="flex flex-col items-start gap-4">
+        <Logo class="w-32 mb-4" />
+        <SmallText class="font-agrandir-light">Obtenga las últimas actualizaciones</SmallText>
+        <form class="w-full">
+            <Field 
+            type="email"
+            placeholder="Tu email"
+            
+            />
+        </form>
+        </div>
+    </div>
+    </Container>
+</footer>
