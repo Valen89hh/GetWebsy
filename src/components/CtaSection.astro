@@ -1,0 +1,48 @@
+---
+import Container from "./ui/containers/Container.astro";
+import Text from "./ui/texts/Text.astro";
+import SmallText from "./ui/texts/SmallText.astro";
+import Field from "./ui/inputs/Field.astro";
+import ButtonSecondary from "./ui/buttons/ButtonSecondary.astro";
+import Heading1 from "./ui/texts/Heading1.astro";
+import ButtonPrimary from "./ui/buttons/ButtonPrimary.astro";
+---
+
+<section class="bg-[var(--color-background)] py-16">
+    <Container>
+        <!-- CTA BOX -->
+        <div class="bg-primary rounded-sm py-12 px-4 text-center">
+          <Heading1 class="text-3xl md:text-4xl mb-4 text-dark">
+            Vamos a discutir la idea
+          </Heading1>
+          <div class="w-full flex justify-center items-center">
+            <SmallText class="w-2/3  block text-black/60 text-base leading-relaxed">
+                Cuéntanos tu idea, y juntos crearemos una solución digital que impulse tu negocio.
+            </SmallText>
+          </div>
+    
+          <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+            <Field
+              type="email"
+              placeholder="Tu email"
+              class="placeholder:text-dark font-agrandir-bold  w-full sm:w-64 px-5 py-3 rounded-full text-black bg-white border-none focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="border border-black cursor-pointer bg-black text-white px-6 py-3 rounded-full hover:bg-transparent hover:border-black hover:text-black transition-all font-bold font-agrandir-bold"
+            >
+              ENVIAR
+            </button>
+          </form>
+        </div>
+
+    <!-- GO TO TOP BUTTON -->
+    <div class="mt-6 flex justify-end">
+      <a
+        href="#top"
+      >
+      <ButtonSecondary>GO TO TOP</ButtonSecondary>
+      </a>
+    </div>
+  </Container>
+</section>
