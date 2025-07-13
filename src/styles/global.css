@@ -34,10 +34,11 @@
 
     /*background color*/
   --color-background: #110F0F;
-
+  
   /*text color*/
   --color-secondary: #FFFFFF99;
   --color-accent: #728095;
+  --color-dark: #0D0E14;
   
   /*border color*/
   --color-border: #A1AEBF;
