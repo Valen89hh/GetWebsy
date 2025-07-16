@@ -6,7 +6,7 @@ import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -14,7 +14,8 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>GetWebsy</title>
 	</head>
-	<body>
+	<body class="overflow-x-hidden">
+		<div id="toast-container" class="fixed top-4 right-4 z-100 space-y-2"></div>
 		<Header/>
 		<slot />
 		<Footer/>

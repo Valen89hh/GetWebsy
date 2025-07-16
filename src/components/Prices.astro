@@ -1,0 +1,194 @@
+---
+import { Image } from "astro:assets";
+import ButtonPrimary from "./ui/buttons/ButtonPrimary.astro";
+import Card from "./ui/cards/Card.astro";
+import Container from "./ui/containers/Container.astro";
+import Heading1 from "./ui/texts/Heading1.astro";
+import Heading3 from "./ui/texts/Heading3.astro";
+import Paragraph from "./ui/texts/Paragraph.astro";
+import SmallText from "./ui/texts/SmallText.astro";
+import check from "../assets/icons/check.svg"
+import Badge from "./ui/texts/Badge.astro";
+import ButtonSecondary from "./ui/buttons/ButtonSecondary.astro";
+---
+
+<section id="precios" class="bg-background py-12 min-h-screen w-full inline-flex items-center">
+    <Container>
+        <Heading1 aos="fade-zoom-in-up" class="text-center">Planes para cada tipo de negocio</Heading1>
+        <Paragraph aos="fade-zoom-in-down" class="text-center w-full max-w-2xl mx-auto mt-6 mb-8 xl:mb-16">
+            Escoge el plan que mejor se adapte a tus necesidades. Todos incluyen dominio, hosting y soporte mensual.
+        </Paragraph>
+        <div class="grid lg:max-w-none lg:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-0">
+            <Card data-aos="flip-left" class="xl:border-r-0">
+                <div>
+                    <div class="flex items-center gap-2 pb-2">
+                        <Heading3>Impulso</Heading3>
+                    </div>
+                    <SmallText class="mb-4 2xl:pr-4 text-accent">Perfecto para emprendedores y negocios pequeños.</SmallText>
+                    <ButtonPrimary class="w-full">Empezar</ButtonPrimary>
+                    <div class="flex items-baseline lg:min-h-[175px] py-8 lg:pb-0 lg:pt-10">
+                        <div class="flex items-end">
+                            <Heading1 class="mt-2 pb-1">S/ 89</Heading1>
+                            <SmallText class="text-accent mb-2 ml-1">/ mes</SmallText>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-t-border py-2">
+                    <SmallText class="font-agrandir mt-2 mb-3">Incluye:</SmallText>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">1 página web (scroll única)</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Dominio y hosting incluidos</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Certificado SSL</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Diseño responsive</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">1 modificación mensual</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Soporte básico por email</SmallText>
+                        </li>
+                    </ul>
+                </div>
+            </Card>
+            <Card data-aos="flip-right" class="xl:-my-8">
+                <div>
+                    <div class="flex items-center gap-2 pb-2">
+                        <div class="flex items-center gap-1">
+                            <Heading3>Vitrina</Heading3>
+                            <Badge>Más popular</Badge>
+                        </div>
+                    </div>
+                    <SmallText class="mb-4 2xl:pr-4 xl:mb-12 text-accent">Muestra tu empresa con una web más completa.</SmallText>
+                    <ButtonPrimary class="w-full">Empezar</ButtonPrimary>
+                    <div class="flex items-baseline lg:min-h-[175px] py-8 lg:pb-0 lg:pt-10">
+                        <div class="flex items-end">
+                            <Heading1 class="mt-2 pb-1">S/ 139</Heading1>
+                            <SmallText class="text-accent mb-2 ml-1">/ mes</SmallText>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-t-border py-2">
+                    <SmallText class="font-agrandir mt-2 mb-3">Todo lo del plan <span class="text-white">Impulso</span>, más:</SmallText>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Hasta 5 secciones o páginas internas</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Formulario de contacto</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Optimización SEO básica</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Soporte mensual prioritario</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Hasta 3 modificaciones al mes</SmallText>
+                        </li>
+                    </ul>
+                </div>
+            </Card>
+            <Card data-aos="flip-left" class="xl:border-l-0">
+                <div>
+                    <div class="flex items-center gap-2 pb-2">
+                        <Heading3>Tienda Pro</Heading3>
+                    </div>
+                    <SmallText class="mb-4 2xl:pr-4 text-accent">Vende productos con una tienda online profesional.</SmallText>
+                    <ButtonPrimary class="w-full">Empezar</ButtonPrimary>
+                    <div class="flex items-baseline lg:min-h-[175px] py-8 lg:pb-0 lg:pt-10">
+                        <div class="flex items-end">
+                            <Heading1 class="mt-2 pb-1">S/ 189</Heading1>
+                            <SmallText class="text-accent mb-2 ml-1">/ mes</SmallText>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-t-border py-2">
+                    <SmallText class="font-agrandir mt-2 mb-3">Todo lo del plan <span class="text-white">Vitrina</span>, más:</SmallText>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Carrito de compras y pagos en línea</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Panel de administración</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Carga de hasta 100 productos</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Reportes básicos de ventas</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Integración con pasarelas de pago (Culqi, Yape, etc.)</SmallText>
+                        </li>
+                    </ul>
+                </div>
+            </Card>
+            <Card data-aos="flip-right" class="xl:border-l-0">
+                <div>
+                    <div class="flex items-center gap-2 pb-2">
+                        <Heading3>Total Websy</Heading3>
+                    </div>
+                    <SmallText class="mb-4 2xl:pr-4 text-accent">Para negocios con requerimientos e integraciones a medida.</SmallText>
+                    <ButtonSecondary class="w-full">Contáctanos</ButtonSecondary>
+                    <div class="flex items-baseline lg:min-h-[175px] py-8 lg:pb-0 lg:pt-10">
+                        <div class="flex items-end">
+                            <Heading1 class="mt-2 pb-1">Custom</Heading1>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-t-border py-2">
+                    <SmallText class="font-agrandir mt-2 mb-3">Incluye todo lo anterior, más:</SmallText>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Integraciones a medida (API, CRM)</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Carga de hasta 100 productos</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Panel administrativo a medida</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Reuniones de seguimiento</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Sistemas personalizados (reservas, POS, etc.)</SmallText>
+                        </li>
+                        <li class="flex items-center gap-1">
+                            <Image src={check} alt="check" width={16}/>
+                            <SmallText class="text-white font-agrandir">Soporte técnico extendido (WhatsApp / llamadas)</SmallText>
+                        </li>
+                    </ul>
+                </div>
+            </Card>
+        </div>
+    </Container>
+</section>
