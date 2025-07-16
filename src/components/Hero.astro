@@ -99,7 +99,10 @@ import Paragraph from "./ui/texts/Paragraph.astro";
         });
 
         const result = await res.json();
-
+        if (!result.success) {
+          showToast("Error: " + result.message, "error");
+          return;
+        }
         showToast("Mensaje enviado correctamente ✅", "success");
         form.reset();
       } catch (err) {
