@@ -104,11 +104,14 @@ import ButtonPrimary from "./ui/buttons/ButtonPrimary.astro";
         });
 
         const result = await res.json();
-
+        if (!result.success) {
+          showToast("Error: " + result.message, "error");
+          return;
+        }
         showToast("Mensaje enviado correctamente ✅", "success");
         form.reset();
       } catch (err) {
-        showToast("Ocurrió un error al enviar ❌", "error");
+        showToast("Ocurrio un error ineseperado", "error");
       } finally {
         btn.removeAttribute("disabled");
         btn.innerHTML = `<span class="text-sm translate-y-0.5 font-agrandir-bold leading-none m-0 p-0 uppercase text-center">Enviar</span>`;
