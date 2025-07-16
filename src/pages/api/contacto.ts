@@ -34,6 +34,14 @@ export const POST: APIRoute = async ({ request }) => {
     });
   } catch (err) {
     console.error("Error al enviar el correo:", err);
-    return new Response("Error al enviar el correo", { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : String(err);
+
+    return new Response(
+      JSON.stringify({ success: false, message: errorMessage + " VAIR: " + import.meta.env.SMTP_HOST }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+  );
   }
 };
