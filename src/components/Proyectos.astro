@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+import ButtonSecondary from "./ui/buttons/ButtonSecondary.astro";
+import Card from "./ui/cards/Card.astro";
+import Container from "./ui/containers/Container.astro";
+import Heading1 from "./ui/texts/Heading1.astro";
+import Text from "./ui/texts/Text.astro";
+import Paragraph from "./ui/texts/Paragraph.astro";
+import Badge from "./ui/texts/Badge.astro";
+import Heading3 from "./ui/texts/Heading3.astro";
+import inmemory from "../assets/proyects/inmemory.png"
+import barber from "../assets/proyects/barber.png"
+import pos from "../assets/proyects/pos.png"
+import dashboard from "../assets/proyects/dashboard.png"
+import natura from "../assets/proyects/natura.png"
+import pideya from "../assets/proyects/pideya.jpg"
+import flecha from "../assets/icons/flecha.svg"
+---
+
+<section id="proyectos" class="bg-background pt-20 pb-12">
+    <Container class="flex flex-col xl:flex-row gap-12">
+        <div data-aos="fade-right">
+            <Heading1 class="text-center xl:text-start">Algunas piezas de nuestro trabajo</Heading1>
+            <Paragraph class="text-center xl:text-start w-full max-w-2xl mx-auto mt-4 mb-6">Aquí te mostramos algunos de los proyectos que hemos desarrollado para emprendedores y negocios locales. Cada sitio refleja nuestro compromiso con el diseño, la funcionalidad y el crecimiento digital.</Paragraph>
+            <div class="inline-flex justify-center xl:justify-start w-full">
+                <ButtonSecondary>Mostrar más</ButtonSecondary>
+            </div>
+        </div>
+        <div class="columns-1 lg:columns-2 space-y-6">
+            <div data-aos="zoom-in-up" class="break-inside-avoid">
+                <a href="https:://inmemory.pe">
+                    <Card class="break-inside-avoid" >
+                        <div class="h-35 mb-6 rounded-sm overflow-hidden">
+                            <Image src={inmemory} alt="InMemory" class="h-full object-cover object-center"/>
+                        </div>
+                        <div>
+                            <Badge>website</Badge>
+                            <Heading3 class="mt-4 mb-3">InMemery.pe</Heading3>
+                            <Text class="text-accent flex justify-start gap-1 items-center">
+                                Leer más
+                                <Image src={flecha} alt="flecha"/>
+                            </Text>
+                        </div>
+                    </Card>
+                </a>
+            </div>
+            <div data-aos="zoom-in-down" class="break-inside-avoid">
+                <a href="https://preview--healthy-login-glow-up.lovable.app/" target="_blank">
+                    <Card class="break-inside-avoid">
+                        <div class="h-35 lg:hidden transition mb-6 rounded-sm overflow-hidden">
+                            <Image src={natura} alt="InMemory" class="h-full object-cover object-center"/>
+                        </div>
+                        <div>
+                            <Badge>Catálogo virtual</Badge>
+                            <Heading3 class="mt-4 mb-3">Nataru Salud</Heading3>
+                            <Text class="text-accent flex justify-start gap-1 items-center">
+                                Leer más
+                                <Image src={flecha} alt="flecha"/>
+                            </Text>
+                        </div>
+                    </Card>
+                </a>
+            </div>
+            <div data-aos="zoom-in" class="break-inside-avoid group">
+                <Card >
+                    <div class="h-35 lg:hidden transition mb-6 rounded-sm overflow-hidden">
+                        <Image src={dashboard} alt="InMemory" class="h-full object-cover object-center"/>
+                    </div>
+                    <div>
+                        <Badge>Dashboard</Badge>
+                        <Heading3 class="mt-4 mb-3">Administración Natura Salud</Heading3>
+                        <Text class="text-accent flex justify-start gap-1 items-center">
+                            Leer más
+                            <Image src={flecha} alt="flecha"/>
+                        </Text>
+                    </div>
+                </Card>
+            </div>
+            <div data-aos="zoom-in-down" class="break-inside-avoid group">
+                <Card class="break-inside-avoid">
+                    <div class="h-35 lg:hidden transition mb-6 rounded-sm overflow-hidden">
+                        <Image src={pos} alt="InMemory" class="h-full object-cover object-center"/>
+                    </div>
+                    <div>
+                        <Badge>Pos</Badge>
+                        <Heading3 class="mt-4 mb-3">Punto de Venta (KANBAN)</Heading3>
+                        <Text class="text-accent flex justify-start gap-1 items-center">
+                            Leer más
+                            <Image src={flecha} alt="flecha"/>
+                        </Text>
+                    </div>
+                </Card>
+            </div>
+            <div data-aos="zoom-in-up" class="break-inside-avoid">
+                <a  href="https://web-barber-salon.netlify.app/" target="_blank">
+                    <Card>
+                        <div class="h-35 mb-6 w-full bg-red-50 rounded-sm overflow-hidden">
+                            <Image src={barber} alt="InMemory" class="h-full w-full object-cover object-center"/>
+                        </div>
+                        <div>
+                            <Badge>landing page</Badge>
+                            <Heading3 class="mt-4 mb-3">Barber Salon</Heading3>
+                            <Text class="text-accent flex justify-start gap-1 items-center">
+                                Leer más
+                                <Image src={flecha} alt="flecha"/>
+                            </Text>
+                        </div>
+                    </Card>
+                </a>
+            </div>
+            <div data-aos="zoom-in-down" class="break-inside-avoid">
+                <a href="https://pidelo-ya.netlify.app/" target="_blank">
+                    <Card class="break-inside-avoid">
+                        <div class="h-35 lg:hidden mb-6 rounded-sm overflow-hidden">
+                            <Image src={pideya} alt="InMemory" class="h-full object-cover object-center"/>
+                        </div>
+                        <div>
+                            <Badge>Catalogo virtual</Badge>
+                            <Heading3 class="mt-4 mb-3">PideYa</Heading3>
+                            <Text class="text-accent flex justify-start gap-1 items-center">
+                                Leer más
+                                <Image src={flecha} alt="flecha"/>
+                            </Text>
+                        </div>
+                    </Card>
+                </a>
+            </div>
+        </div>
+    </Container>
+</section>

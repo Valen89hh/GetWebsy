@@ -8,41 +8,112 @@ import Heading1 from "./ui/texts/Heading1.astro";
 import ButtonPrimary from "./ui/buttons/ButtonPrimary.astro";
 ---
 
-<section class="bg-background py-16">
+<section id="contact" class="bg-background py-16">
     <Container>
         <!-- CTA BOX -->
-        <div class="bg-primary rounded-sm py-12 px-4 text-center">
-          <Heading1 class="text-3xl md:text-4xl mb-4 text-dark">
-            Vamos a discutir la idea
-          </Heading1>
-          <div class="w-full flex justify-center items-center">
-            <SmallText class="w-2/3  block text-black/60 text-base leading-relaxed">
-                Cuéntanos tu idea, y juntos crearemos una solución digital que impulse tu negocio.
-            </SmallText>
+        <div data-aos="zoom-in" class="bg-primary rounded-sm py-12 px-4 text-center flex justify-center items-center">
+          <div class="w-full max-w-5xl flex flex-col justify-center items-center lg:w-1/2">
+            <Heading1 class="text-3xl md:text-4xl mb-4 text-dark">
+              Vamos a discutir la idea
+            </Heading1>
+            <div class="w-full flex justify-center mb-6 items-center">
+              <SmallText class="w-full sm:w-2/3  block text-black/60 text-base leading-relaxed">
+                  Cuéntanos tu idea, y juntos crearemos una solución digital que impulse tu negocio.
+              </SmallText>
+            </div>
+      
+            <form id="ctaForm2" class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-2/3">
+              <Field 
+                id="iptCorreo2"
+                type="email"
+                placeholder="Email"
+                required
+                name="correo"
+                class="placeholder:text-dark  flex-1 font-agrandir-bold  w-full px-5 py-3 rounded-full text-black bg-white border-none focus:outline-none"
+                />
+                <ButtonPrimary id="btnEnviar2" class="w-full disabled:bg-black sm:w-auto px-6 border border-black cursor-pointer bg-black text-white hover:bg-transparent hover:border-black hover:text-black transition-all font-bold font-agrandir-bold">
+                Enviar
+                </ButtonPrimary>
+              </form>
           </div>
-    
-          <form class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
-            <Field
-              type="email"
-              placeholder="Tu email"
-              class="placeholder:text-dark font-agrandir-bold  w-full sm:w-64 px-5 py-3 rounded-full text-black bg-white border-none focus:outline-none"
-            />
-            <button
-              type="submit"
-              class="border border-black cursor-pointer bg-black text-white px-6 py-3 rounded-full hover:bg-transparent hover:border-black hover:text-black transition-all font-bold font-agrandir-bold"
-            >
-              ENVIAR
-            </button>
-          </form>
         </div>
 
     <!-- GO TO TOP BUTTON -->
     <div class="mt-6 flex justify-end">
       <a
-        href="#top"
+        href="#inicio"
       >
-      <ButtonSecondary>GO TO TOP</ButtonSecondary>
+      <ButtonSecondary data-aos="zoom-in">GO TO TOP</ButtonSecondary>
       </a>
     </div>
   </Container>
 </section>
+
+<script>
+  const form: HTMLFormElement | null = document.getElementById("ctaForm2") as HTMLFormElement;
+  const btn = document.getElementById("btnEnviar2");
+  const toastContainer = document.getElementById("toast-container");
+
+  function showToast(message: string | null, type = "success") {
+    const toast = document.createElement("div");
+    toast.className = `
+      px-4 py-2 rounded shadow-md text-sm font-medium transition-all duration-300
+      ${type === "success" ? "bg-green-500 text-white" : "bg-red-500 text-white"}
+    `;
+    toast.textContent = message;
+    if(toastContainer){
+      toastContainer.appendChild(toast);
+  
+      // Desaparecer luego de 3 segundos
+      setTimeout(() => {
+        toast.classList.add("opacity-0");
+        toast.classList.add("translate-x-4");
+        setTimeout(() => toast.remove(), 300); // animación de salida
+      }, 3000);
+    }
+  }
+
+  if (form && btn) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      // 🛑 Validar el campo correo
+      const correoInput = document.getElementById('iptCorreo2') as HTMLInputElement;
+      const correo = correoInput.value.trim();
+
+      if (!correo) {
+        showToast("El correo es obligatorio", "error");
+        return;
+      }
+
+      const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!correoRegex.test(correo)) {
+        showToast("Correo inválido", "error");
+        return;
+      }
+      btn.setAttribute("disabled", "true");
+      btn.innerHTML = `
+        <div class="w-5 h-5 border-2 border-white border-t-transparent animate-spin rounded-full"></div>
+      `;
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("/api/contacto", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await res.json();
+
+        showToast("Mensaje enviado correctamente ✅", "success");
+        form.reset();
+      } catch (err) {
+        showToast("Ocurrió un error al enviar ❌", "error");
+      } finally {
+        btn.removeAttribute("disabled");
+        btn.innerHTML = `<span class="text-sm translate-y-0.5 font-agrandir-bold leading-none m-0 p-0 uppercase text-center">Enviar</span>`;
+      }
+      
+    });
+  }
+</script>

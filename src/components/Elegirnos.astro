@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import searching from "../assets/searching.svg"
+import Heading1 from "./ui/texts/Heading1.astro";
+import Paragraph from "./ui/texts/Paragraph.astro";
+import ButtonSecondary from "./ui/buttons/ButtonSecondary.astro";
+import Container from "./ui/containers/Container.astro";
+---
+
+<section class="bg-black py-12 min-h-[70vh] flex">
+  <Container class="grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-8">
+    <div data-aos="fade-down" class="flex justify-center items-center">
+      <Image src={searching} alt="Searching" class="w-full max-w-sm" />
+    </div>
+    <div data-aos="fade-up" class="text-center lg:text-left">
+      <Heading1>¿Por qué elegirnos?</Heading1>
+      <Paragraph class="mt-4 mb-6">
+        Ofrecemos soluciones web modernas, rápidas y accesibles para que tu negocio crezca en el mundo digital. Desde páginas informativas hasta sistemas personalizados, todo adaptado a tus necesidades.
+      </Paragraph>
+      <div class="flex justify-center lg:justify-start">
+        <ButtonSecondary>conectemos</ButtonSecondary>
+      </div>
+    </div>
+  </Container>
+</section>
