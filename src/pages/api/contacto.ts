@@ -1,47 +1,47 @@
 export const prerender = false;
 
 import type { APIRoute } from "astro";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+// Instancia con tu clave
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
-  const data = await request.formData();
-  const correo = data.get("correo");
-  console.log(import.meta.env.SMTP_USER)
+  const formData = await request.formData();
+  const correo = formData.get("correo");
 
-  const transporter = nodemailer.createTransport({
-    host: import.meta.env.SMTP_HOST,
-    port: Number(import.meta.env.SMTP_PORT),
-    secure: import.meta.env.SMTP_SECURE === "true",
-    auth: {
-      user: import.meta.env.SMTP_USER,
-      pass: import.meta.env.SMTP_PASS,
-    },
-  });
+  if (!correo || typeof correo !== "string") {
+    return new Response(JSON.stringify({
+      success: false,
+      message: "Correo no válido",
+    }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
   try {
-    await transporter.sendMail({
-      from: `"Web GetWebsy" <${import.meta.env.SMTP_USER}>`,
-      to: "contacto@getwebsy.es", // puedes enviar a este mismo correo
-      subject: "Nuevo mensaje desde tu sitio web",
-      html: `
-        <p><strong>Correo:</strong> ${correo}</p>
-      `,
+    const { error } = await resend.emails.send({
+      from: "GetWebsy Contacto <no-reply@getwebsy.es>", // ⚠️ usa uno verificado si tienes dominio
+      to: "contacto@getwebsy.es",
+      subject: "Nuevo contacto desde el sitio web",
+      html: `<p><strong>Correo:</strong> ${correo}</p>`,
     });
+
+    if (error) throw error;
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error("Error al enviar el correo:", err);
-    const errorMessage = err instanceof Error ? err.message : String(err);
-
-    return new Response(
-      JSON.stringify({ success: false, message: errorMessage + " VAIR: " + import.meta.env.SMTP_HOST }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-  );
+    const message = err instanceof Error ? err.message : String(err);
+    return new Response(JSON.stringify({
+      success: false,
+      message,
+    }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 };
