@@ -1,7 +1,12 @@
 ---
 import CtaSection from '../components/CtaSection.astro';
+import Elegirnos from '../components/Elegirnos.astro';
 import Hero from '../components/Hero.astro';
+import Prices from '../components/Prices.astro';
+import Proyectos from '../components/Proyectos.astro';
+import Services from '../components/Services.astro';
 import Tecnologias from '../components/Tecnologias.astro';
+import Testimonios from '../components/Testimonios';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,5 +16,10 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<Hero/>
 	<Tecnologias/>
+	<Services/>
+	<Elegirnos/>
+	<Prices/>
+	<Proyectos/>
+	<Testimonios client:only="react"/>
 	<CtaSection/>
 </Layout>

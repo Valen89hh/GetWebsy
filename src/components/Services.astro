@@ -1,0 +1,56 @@
+---
+import Card from "./ui/cards/Card.astro";
+import Container from "./ui/containers/Container.astro";
+import Heading1 from "./ui/texts/Heading1.astro";
+import Paragraph from "./ui/texts/Paragraph.astro";
+import { Image } from 'astro:assets';
+import brading from "../assets/icons/branding.svg"
+import develop from "../assets/icons/develop.svg"
+import online from "../assets/icons/online.svg"
+import responsive from "../assets/icons/responsive.svg"
+import seo from "../assets/icons/seo.svg"
+import tecnico from "../assets/icons/tecnico.svg"
+import Heading2 from "./ui/texts/Heading2.astro";
+import SmallText from "./ui/texts/SmallText.astro";
+---
+
+<section id="services" class="bg-background min-h-screen inline-flex items-center w-full">
+  <Container class="text-center py-12 w-full">
+    <Heading1 aos="fade-zoom-in-up" >Servicios</Heading1>
+    <Paragraph aos="fade-zoom-in-down" class="w-full max-w-2xl mx-auto mt-6 mb-8">
+      En GetWebsy creamos sitios web, tiendas online y sistemas personalizados para emprendedores y negocios locales. Combinamos diseño moderno, entrega rápida y precios accesibles para ayudarte a destacar en el mundo digital.
+    </Paragraph>
+    <div  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-start">
+      <Card data-aos="fade-right">
+        <Image src={brading} alt="Identidad Visual" />
+        <Heading2 class="mb-2 mt-3">Identidad Visual</Heading2>
+        <SmallText>Te ayudamos a definir una imagen digital profesional y coherente para tu marca.</SmallText>
+      </Card>
+      <Card  data-aos="fade-up">
+        <Image src={develop} alt="Desarrollo web" />
+        <Heading2 class="mb-2 mt-3">Desarrollo web</Heading2>
+        <SmallText>Creamos páginas web modernas, rápidas y adaptadas a cualquier dispositivo.</SmallText>
+      </Card>
+      <Card  data-aos="fade-left">
+        <Image src={online} alt="Presencia online" />
+        <Heading2 class="mb-2 mt-3">Presencia online</Heading2>
+        <SmallText>Mejora tu visibilidad digital con sitios optimizados y enfoque profesional.</SmallText>
+      </Card>
+      <Card  data-aos="fade-right">
+        <Image src={responsive} alt="Diseño responsive" />
+        <Heading2 class="mb-2 mt-3">Diseño responsive</Heading2>
+        <SmallText>Tu web se verá perfecta en celulares, tablets y computadoras.</SmallText>
+      </Card>
+      <Card  data-aos="fade-up">
+        <Image src={seo} alt="Optimización web (SEO)" />
+        <Heading2 class="mb-2 mt-3">Optimización web (SEO)</Heading2>
+        <SmallText>Nuestras webs están preparadas para posicionarse en buscadores como Google.</SmallText>
+      </Card>
+      <Card  data-aos="fade-left">
+        <Image src={tecnico} alt="Acompañamiento técnico" />
+        <Heading2 class="mb-2 mt-3">Acompañamiento técnico</Heading2>
+        <SmallText>Te asesoramos y damos soporte constante en todos nuestros planes.</SmallText>
+      </Card>
+    </div>
+  </Container>
+</section>

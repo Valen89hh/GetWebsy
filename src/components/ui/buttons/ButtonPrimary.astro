@@ -2,17 +2,21 @@
 import { twMerge } from 'tailwind-merge';
 
 // Extrae props y separa `class`
-const { class: className = "", ...rest } = Astro.props;
+const { class: className = "", loading = false, ...rest } = Astro.props;
 
 // Clases base del botón
-const baseClasses = "px-6 h-[42px] bg-primary cursor-pointer inline-flex justify-center items-center  rounded-full transition-all hover:bg-primary/90";
+const baseClasses = "px-6 h-[42px] bg-primary text-black cursor-pointer inline-flex justify-center items-center  rounded-full transition-all hover:bg-primary/90";
 
 // Combina usando twMerge
 const finalClass = twMerge(baseClasses, className);
 ---
 
 <button class={finalClass} {...rest}>
-    <span class="text-sm translate-y-0.5 text-black font-agrandir-bold leading-none m-0 p-0 uppercase text-center">
-        <slot />
-    </span>
+    {loading ? (
+        <div class="w-5 h-5 border-2 border-white border-t-transparent animate-spin rounded-full"/>
+    ): (
+        <span class="text-sm translate-y-0.5  font-agrandir-bold leading-none m-0 p-0 uppercase text-center">
+            <slot />
+        </span>
+    )}
 </button>
